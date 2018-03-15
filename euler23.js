@@ -1,4 +1,3 @@
-
 //function for proper divisor --> array
 function properDivisors(x){
   let res = []
@@ -16,7 +15,6 @@ function isAbundant(x, array){
   for (let a of array){
     sum+=a
   }
-
   if (sum == x)
     return 0;
   else if (sum > x)
