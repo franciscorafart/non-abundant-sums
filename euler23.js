@@ -10,8 +10,19 @@ function properDivisors(x){
   }
   return res
 }
+function isPerfect(x, array){
+  let sum=0;
+  for (let a of array){
+    sum+=a
+  }
+  if (sum == x)
+    return true
 
-console.log(properDivisors(28))
+  return false
+
+}
+
+console.log(isPerfect(28, properDivisors(28)));
 //function isAbundantnumber
 
 //function isDeficient
