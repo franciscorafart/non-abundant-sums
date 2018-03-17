@@ -64,7 +64,7 @@ function AddOfNonAbundantAdditionsBelow(x){
   properDivsObj = storeProperDivs(x);
 
   let res = []
-  for (let i = x; i>23; i--){
+  for (let i = x; i>0; i--){
     if (additionOfAbund(i, properDivsObj)==false){
       res.push(i);
       console.log(i)
@@ -79,8 +79,8 @@ function AddOfNonAbundantAdditionsBelow(x){
 
   return total;
 }
-//
-console.log(AddOfNonAbundantAdditionsBelow(28123))
+
+console.log(AddOfNonAbundantAdditionsBelow(50000))
 
 
 //function that analyzes independent number of addition combinations
