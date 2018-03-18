@@ -1,6 +1,7 @@
-//function for proper divisor --> array
-function properDivisors(x){
+console.log(AddOfNonAbundantAdditionsBelow(50000));
 
+//function for proper divisor --> returns array with all proper divisors of a number x
+function properDivisors(x){
   let res = []
   let half = Math.floor(x/2)
   for (let i = half; i>0; i--){
@@ -10,17 +11,17 @@ function properDivisors(x){
   return res
 }
 
+//function to store proper divisors of numbers between 1 - x.  -> Returns and object with arrays
 function storeProperDivs(x){
   let propDivs = {}
 
   for (let i = x; i>0; i--){
-      // let iString = String(i)
       propDivs[i] = properDivisors(i)
   }
   return propDivs;
 }
 
-//function abundance 1: abundance, -1 deficient, 0: perfect
+//function isAbundant returns 1 if x abundat, -1 deficient, 0: perfect. Takes a proper divisors array for that number
 function isAbundant(x, array){
   let sum=0;
   for (let a of array){
@@ -34,7 +35,7 @@ function isAbundant(x, array){
     return -1;
 }
 
-//function that evaluates if a number is an addition of abundants. --> boolean.
+//function that evaluates if a number is an addition of abundants. --> returns boolean.
 //Takes optional object that stores properDiviors arrays for all numbers between 1 and x (for efficiency)
 function additionOfAbund(x, obj){
   let sumAbundant = false
@@ -53,23 +54,19 @@ function additionOfAbund(x, obj){
       sumAbundant = true
       break
     }
-
-    // console.log("a = "+a+ " "+ "b = "+b + " :"+notSumAbundant);
   }
   return sumAbundant;
 }
 
 function AddOfNonAbundantAdditionsBelow(x){
- //calcular todos los proper abundants y pasar el objecto a additionOfAbund
+ //store all proper divisors in object first instead of calculating them every time (efficiency)
   properDivsObj = storeProperDivs(x);
 
   let res = []
   for (let i = x; i>0; i--){
     if (additionOfAbund(i, properDivsObj)==false){
       res.push(i);
-      console.log(i)
     }
-
   }
 
   let total = 0;
@@ -80,7 +77,7 @@ function AddOfNonAbundantAdditionsBelow(x){
   return total;
 }
 
-console.log(AddOfNonAbundantAdditionsBelow(50000))
+
 
 
 //function that analyzes independent number of addition combinations
