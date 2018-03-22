@@ -1,4 +1,4 @@
-console.log(AddOfNonAbundantAdditionsBelow(50000));
+console.log(AddOfNonAbundantAdditionsBelow(28123));
 
 //function for proper divisor --> returns array with all proper divisors of a number x
 function properDivisors(x){
@@ -11,7 +11,7 @@ function properDivisors(x){
   return res
 }
 
-//function to store proper divisors of numbers between 1 - x.  -> Returns and object with arrays
+//function to store proper divisors of numbers between 1 - x. -> Returns and object with arrays
 function storeProperDivs(x){
   let propDivs = {}
 
@@ -21,7 +21,8 @@ function storeProperDivs(x){
   return propDivs;
 }
 
-//function isAbundant returns 1 if x abundat, -1 deficient, 0: perfect. Takes a proper divisors array for that number
+//function isAbundant returns 1 if x abundat, -1 deficient, 0: perfect.
+//Takes a proper divisors array for that number
 function isAbundant(x, array){
   let sum=0;
   for (let a of array){
@@ -36,7 +37,7 @@ function isAbundant(x, array){
 }
 
 //function that evaluates if a number is an addition of abundants. --> returns boolean.
-//Takes optional object that stores properDiviors arrays for all numbers between 1 and x (for efficiency)
+//For efficienty, takes optional object that stores properDiviors arrays for all numbers between 1 and x
 function additionOfAbund(x, obj){
   let sumAbundant = false
   //addition combinations
